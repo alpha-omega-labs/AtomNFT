@@ -52,4 +52,17 @@ The following variables should be set in the script with your own values:
  • The ABI file should be in JSON format and contain the correct ABI for your smart contract.
 </pre>
 
+<h2>Very MVP</h2>
+Block and tx containing 5TCP minted structure:
+<pre>
+https://explorer.genesisl1.org/block/0xd3fb446be86e0a976182e576b006da8e35e659551d59a88c7e269a2b4af80ea9
+</pre>
+
+Metadata viewer:
+<pre>https://codepen.io/alpha-omega-labs/pen/BaqyjNL</pre>
+5TCP.mmtf structure is 717699 bytes in size (pre base64 encode) and other metadata is 1642 bytes in size. 
+Actual block size containing NFT is 965138 bytes and 682333582 gas was used to mint it, with gas price of 50gel1 tx cost comes to 682333582*50=34116679100gel1 = 34.1166791 L1.
+1MB NFT roughly cost 34.5 L1 with 50gel1 gas price.  
+ 
+
 <h2>WARNING! Remember to never share your private key with anyone or include it in any public repositories.</h2>
