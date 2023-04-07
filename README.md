@@ -7,7 +7,7 @@ To use this script, you'll need:
  • Python 3.6 or higher
  • web3.py Python library (install with pip install web3)
  • A Geth API URL
- • Your Ethereum private key
+ • Your GenesisL1 private key
  • The smart contract address
  • The ABI file for the smart contract
 </pre>
@@ -32,7 +32,7 @@ python3 atomnft.py show 1
 </pre>
 
 <h2>Downloading AtomNFT molecular data file content</h2>
-To download the file content associated with an NFT as a binary file, use the <code>--download</code> flag after specifying the token ID. The downloaded file will be named as <code>pdbid_L1.mmtf</code>, where pdbid is the actual PDB ID from the NFT field, and <code>_L1.mmtf</code> is a standard suffix for all files.
+To download the file content associated with an NFT as a binary file, use the <code>--download</code> flag after specifying the token ID. The downloaded file will be named as <code>pdbid_L1.mmtf</code>, where <code>pdbid</code> is the actual PDB ID from the NFT field, and <code>_L1.mmtf</code> is a standard suffix for all files.
 
 Example command to download the file content of NFT with token ID 1:
 <pre> python3 atomnft.py show 1 --download</pre>
@@ -44,8 +44,10 @@ The following variables should be set in the script with your own values:
  • CONTRACT_ADDRESS: The address of the AtomNFT smart contract.
  • ABI_FILE: The path to the ABI file for the AtomNFT smart contract.
  • GETH_API_URL: The URL of the Geth API you want to connect to.
-Notes
- • Ensure that the provided private key has enough Ether to cover the gas fees for minting NFTs.
+</pre>
+<h2>Notes</h2>
+<pre>
+ • Ensure that the provided private key has enough L1 to cover the gas fees for minting NFTs.
  • Double-check the Geth API URL and ensure it's accessible and working before running the script.
  • The ABI file should be in JSON format and contain the correct ABI for your smart contract.
 </pre>
