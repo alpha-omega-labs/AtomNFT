@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+</head>
+<body>
+    <h1>NFT Viewer</h1>
+    <form id="nftForm">
+        <label for="tokenId">Token ID:</label>
+        <input type="number" id="tokenId" name="tokenId" required>
+        <button type="submit">Get NFT Metadata</button>
+    </form>
+    <pre id="output"></pre>
+
+    <script>
+        const contractAddress = "";
+        const gethNodeUrl = "";
+
+        const contractABI = [];
+
+        const web3 = new Web3(gethNodeUrl);
+        const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+        document.getElementById("nftForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const tokenId = document.getElementById("tokenId").value;
+            try {
+                const metadata = await contract.methods.getMetadata(tokenId).call();
+                const output = `
+                    PDB ID: ${metadata[0]}
+                    Title: ${metadata[1]}
+                    fileContent: ${metadata[2]}
+                    Sequences: ${metadata[3]}
+                    Organism: ${metadata[4]}
+                    Experimental Method: ${metadata[5]}
+                    DOI: ${metadata[6]}
+                    Authors: ${metadata[7]}
+                    Accession Date: ${metadata[8]}
+                `;
+                document.getElementById("output").textContent = output;
+            } catch (error) {
+                console.error(error);
+                document.getElementById("output").textContent = "Error retrieving NFT metadata";
+            }
+        });
+    </script>
+</body>
+</html>
